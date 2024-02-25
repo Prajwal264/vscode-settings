@@ -70,22 +70,12 @@
       ]
     }
   },
-  {
-    "key": "shift+]",
-    "command": "cursorColumnSelectDown",
-    "when": "editorColumnSelection && textInputFocus"
-  },
-  {
+ {
     "key": "shift+down",
     "command": "-cursorColumnSelectDown",
     "when": "editorColumnSelection && textInputFocus"
   },
-  {
-    "key": "shift+[",
-    "command": "vscode-neovim.send",
-    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
-  },
-  {
+ {
     "key": "shift+down",
     "command": "-vscode-neovim.send",
     "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
