@@ -56,12 +56,22 @@
     "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
   },
   {
+    "key": "q",
+    "command": "closeParameterHints",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
     "command": "runCommands",
     "key": "escape", // whatever keybinding
     "args": {
       "commands": [
         "workbench.action.focusActiveEditorGroup",
-        "vscode-neovim.escape"
+        "vscode-neovim.escape",
+        "closeParameterHints",
+        "closeFindWidget",
+        "closeReferenceSearchEditor",
+        "editor.debug.action.closeExceptionWidget",
+        "closeMarkersNavigation"
       ]
     }
   },
@@ -101,21 +111,6 @@
     "when": "editorHoverFocused"
   },
   {
-    "key": "l",
-    "command": "-editor.action.scrollRightHover",
-    "when": "editorHoverFocused"
-  },
-  {
-    "key": "alt+left",
-    "command": "editor.action.scrollLeftHover",
-    "when": "editorHoverFocused"
-  },
-  {
-    "key": "h",
-    "command": "-editor.action.scrollLeftHover",
-    "when": "editorHoverFocused"
-  },
-  {
     "key": "shift+=",
     "command": "vscode-neovim.send",
     "when": "editorTextFocus && neovim.init && focusedView == 'workbench.panel.output' && neovim.mode != 'insert'"
@@ -127,23 +122,28 @@
   },
   {
     "key": "shift+l",
-    "command": "editor.action.showDefinitionPreviewHover"
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "neovim.init && editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
     "key": "shift+r",
-    "command": "editor.action.referenceSearch.trigger"
+    "command": "editor.action.referenceSearch.trigger",
+    "when": "neovim.init && editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
     "key": "q",
-    "command": "references-view.removeCallItem"
+    "command": "references-view.removeCallItem",
+    "when": "neovim.init && editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
     "key": "q",
-    "command": "references-view.removeReferenceItem"
+    "command": "references-view.removeReferenceItem",
+    "when": "neovim.init && editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
     "key": "q",
-    "command": "references-view.removeTypeItem"
+    "command": "references-view.removeTypeItem",
+    "when": "neovim.init && editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
   },
   {
     "key": "g r",
@@ -151,8 +151,13 @@
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
   {
-    "key": "shift+f12",
-    "command": "-editor.action.goToReferences",
-    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-  }
+    "key": "] d",
+    "command": "editor.action.marker.next",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+ {
+    "key": "[ d",
+    "command": "editor.action.marker.prev",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
 ]
