@@ -1,0 +1,98 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": " e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "]b",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "[b",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "z+c",
+    "command": "editor.fold",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "z+r",
+    "command": "editor.unfoldAll",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "command": "runCommands",
+    "key": "escape", // whatever keybinding
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        "vscode-neovim.escape"
+      ]
+    }
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    "command": "runCommands",
+    "key": "ctrl+\\", // whatever keybinding
+    "args": {
+      "commands": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.terminal.toggleTerminal"
+      ]
+    }
+  },
+  {
+    "key": "shift+]",
+    "command": "cursorColumnSelectDown",
+    "when": "editorColumnSelection && textInputFocus"
+  },
+  {
+    "key": "shift+down",
+    "command": "-cursorColumnSelectDown",
+    "when": "editorColumnSelection && textInputFocus"
+  },
+  {
+    "key": "shift+[",
+    "command": "vscode-neovim.send",
+    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "shift+down",
+    "command": "-vscode-neovim.send",
+    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "shift+up",
+    "command": "-vscode-neovim.send",
+    "when": "neovim.init && neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  }
+]
